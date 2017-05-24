@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { RadioPlayersProvider } from '../providers/radio-players/radio-players';
 
 import { HttpModule } from '@angular/http';
+import { ReproductorComponent } from '../components/reproductor/reproductor';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpModule } from '@angular/http';
     ContactoPage,
     PistasPage,
     RadioPage,
-    TabsPage
+    TabsPage,
+    ReproductorComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { HttpModule } from '@angular/http';
     ContactoPage,
     PistasPage,
     RadioPage,
+    ReproductorComponent,
     TabsPage
   ],
   providers: [

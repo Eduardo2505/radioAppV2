@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-import { RadioPlayersProvider } from '../../providers/radio-players/radio-players';
+import { IonicPage, NavController} from 'ionic-angular';
 
 /**
  * Generated class for the RadioPage page.
@@ -9,6 +7,9 @@ import { RadioPlayersProvider } from '../../providers/radio-players/radio-player
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
+
+import { RadioPlayersProvider } from '../../providers/radio-players/radio-players';
+
 @IonicPage()
 @Component({
   selector: 'page-radio',
@@ -16,8 +17,9 @@ import { RadioPlayersProvider } from '../../providers/radio-players/radio-player
 })
 export class RadioPage {
 
+
   player: any;
-  constructor(public navCtrl: NavController, player: RadioPlayersProvider, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, player: RadioPlayersProvider) {
     this.player = player;
   }
   play() {
@@ -29,5 +31,6 @@ export class RadioPage {
   pause() {
     this.player.pause();
   }
+
 
 }

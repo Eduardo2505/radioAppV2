@@ -17,4 +17,18 @@
 <ion-content padding>
   <ion-searchbar (ionInput)="getItems($event)" placeholder="Pistas"></ion-searchbar>
 
+
+  <ion-list>
+    
+  <!--<reproductor *ngfor="lef s if song"-->
+    <reproductor 
+      [titulo]="'Titulo1'"
+      [artista]="'artista1'"
+      [album]="'album1'"
+      [cover]="'http://tamalesdemama.com/logo.png'"
+      [audioSrc]="'http://stream.radio10.nl/radio10'"
+      >
+     </reproductor>
+  
+  </ion-list>
 </ion-content>
