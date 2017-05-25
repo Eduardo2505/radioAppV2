@@ -15,21 +15,45 @@ export class ReproductorComponent implements OnInit {
   @Input() audioSrc: string;
 
   public audio: any;
-  public ready: boolean;
   public playing: boolean;
+  public audioPos: number;
+  public audioDuration: number;
+
+  public ready: boolean;
+
 
   constructor() {
 
-    this.ready = false;
     this.playing = false;
+    this.audioPos = 0;
+    this.ready = false;
   }
   ngOnInit() {
     this.audio = new Audio();
     this.audio.src = this.audioSrc;
+    console.log(this.audio.src);
     this.audio.load();
-    this.audio.oncamplaythrough = () => {
+
+    //  console.log("entro>>>>>>>>>" + this.audio.currentTime);
+
+    this.audio.oncanplaythrough = () => {
+      this.audioDuration = this.audio.duration;
       this.ready = true;
-    }
+      //console.log(this.audioDuration);
+
+    };
+
+    this.audio.ontimeupdate = () => {
+      this.audioPos = this.audio.currentTime;
+
+    };
+    
+    this.audio.onended = () => {
+      this.audioPos = 0;
+      this.playing=false;
+    };
+
+
   }
   togglePlay() {
     if (!this.playing) {

@@ -8,4 +8,6 @@
     <ion-icon *ngIf="!playing" name="play"></ion-icon>
     <ion-icon *ngIf="playing" name="pause"></ion-icon>
   </button>
+  <progress max="{{audioDuration}}" value="{{audioPos}}" ></progress>
 </ion-item>
+
