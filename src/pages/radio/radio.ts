@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController} from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 
 /**
  * Generated class for the RadioPage page.
@@ -19,8 +19,10 @@ export class RadioPage {
 
 
   player: any;
+  public playing: boolean;
   constructor(public navCtrl: NavController, player: RadioPlayersProvider) {
     this.player = player;
+    this.playing = false;
   }
   play() {
     this.player.play().then(() => {
@@ -32,5 +34,17 @@ export class RadioPage {
     this.player.pause();
   }
 
+
+  togglePlay() {
+    if (!this.playing) {
+
+      this.play();
+    } else {
+      this.pause();
+    }
+
+    this.playing = !this.playing;
+
+  }
 
 }
